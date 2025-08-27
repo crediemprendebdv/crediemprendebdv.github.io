@@ -1,0 +1,509 @@
+html {
+  height: 100%;
+  width: 100%;
+}/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500; /* Mantiene Nunito 500 como peso por defecto */
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #262d37;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    flex-direction: column; /* Alinear en columna */
+    align-items: center; /* Centrar los logos */
+    padding: 10px 0; /* Ajuste del padding */
+    background-color: #ffffff; /* Fondo blanco */
+    width: 100vw; /* Ancho completo de la ventana */
+}
+
+.logo {
+    display: flex;
+    flex-direction: column; /* Alinear logos verticalmente */
+    align-items: center; /* Centrar los logos */
+    width: 100%; /* Asegurarse de que el contenedor del logo ocupe todo el ancho */
+    margin-top: 4px;
+    
+}
+
+.logo img:first-child {
+    width: 100%; /* Asegurarse de que el nuevo logo abarque hasta los bordes */
+    height: auto; /* Mantener la relación de aspecto */
+    object-fit: cover; /* Cubrir el área del contenedor */
+}
+
+.logo img:last-child {
+    max-height: 40px; /* Limitar la altura del logo del Banco de Venezuela */
+    width: auto; /* Mantener la relación de aspecto */
+    margin-top: 29px; /* Separar del logo superior */
+}
+
+.banking-access {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  margin-top: 8px;
+}
+
+/* Botón de Banca en línea */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: #2f73c8;
+  color: #ffffff;
+  margin-left: -5px;
+  padding: 12.5px 50px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2f73c8;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 0px;
+  left: 25px 
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #2f73c8;
+}
+
+.dropdown-btn:hover + .dropdown-content {
+  display: block;
+}
+
+/* Menú de tres rayas */
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4.3px;
+  margin-top: 1px;
+}
+
+.menu-icon .bar {
+  width: 22px;
+  height: 3.5px;
+  background-color: #262d37;
+  transition: all 0.25s ease;
+  border-radius: 1px;
+}
+
+/* Menú lateral desplegable */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Oculta el menú fuera de la pantalla inicialmente */
+  width: 250px;
+  height: 100%;
+  background-color: #2f73c8;
+  transition: left 0.3s ease; /* Transición suave */
+  padding-top: 60px;
+  color: #ffffff;
+  z-index: 1000;
+}
+
+.side-menu a {
+  display: block;
+  padding: 7px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+  top: -50px; /* Ajusta el valor para moverlo hacia arriba */
+  left: 12px; /* Ajusta el valor para moverlo a la derecha */
+}
+}
+
+.side-menu a:hover {
+  background-color: #2f73c8;
+}
+
+.side-menu .close-btn {
+  position: absolute;
+  top: -5px;
+  right: 8px;
+  font-size: 27px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Modificación para mostrar/ocultar el menú */
+.menu-icon.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5.5px, 5.5px);
+}
+
+.menu-icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5.5px, -5.5px);
+}
+
+.side-menu.open {
+  left: 0; /* Mueve el menú al lado visible */
+}
+
+/* Program description section */
+.program-description {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 0; /* Ajustado para que la imagen se extienda completamente */
+    text-align: center;
+    margin-top: 11px;
+}
+
+.image-container {
+    margin: 0; /* Eliminar márgenes para que se extienda completamente */
+    width: 100vw; /* Ancho completo de la ventana */
+    position: relative; /* Permitir el uso de posición absoluta en la imagen */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajustar la posición */
+}
+
+.centered-title {
+    position: absolute; /* Para colocar el título sobre la imagen */
+    top: 15.5%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para el centro exacto */
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500; /* Grosor 600 */
+    font-size: 24px; /* Ajusta el tamaño según lo que necesites */
+    line-height: 1.2; /* Ajusta la altura de línea según sea necesario */
+    color: #ffffff; /* Cambia el color del texto si es necesario */
+    text-align: center; /* Centrado del texto */
+}
+
+.image-container img {
+    width: 100vw; /* La imagen ocupará todo el ancho de la ventana */
+    height: auto; /* Mantener la relación de aspecto */
+    margin-bottom: 21px;
+}
+
+/* Párrafo debajo de la imagen alineado a la izquierda */
+.description-paragraph {
+    text-align: justify; /* Alinear a la izquierda */
+    font-size: 18.2px;
+    padding: 24px;
+    line-height: 1.5;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center; /* Centra el video horizontalmente */
+    margin: 0 auto;
+    padding: 0 24px; /* Márgenes laterales opcionales */
+    Margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 560px; /* Ancho máximo para el video */
+    padding-top: 56.25%; /* Proporción 16:9 para mantener el aspecto del video */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Form section */
+.form-section {
+  background-color: #ffffff; /* Fondo blanco para coincidir con el formulario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px;
+  border: 1px solid #e1dfe0;
+  border-radius: 10px;
+  overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+.form-header {
+  background-color: #2f73c8; /* Color de fondo del encabezado */
+  color: #ffffff; /* Color del texto del encabezado */
+  padding: 15px; /* Espacio interno del encabezado */
+  text-align: center; /* Centra el texto */
+  font-size: 14px; /* Tamaño de la fuente */
+  font-weight: bold; /* Peso de la fuente */
+  position: relative; /* Permite el ajuste de posición */
+  top: -21px; /* Ajusta el encabezado para que suba y se acople con el borde del formulario */
+  left: -190px; /* Alineación a la izquierda */
+  right: 0; /* Alineación a la derecha */
+  margin: 0; /* Elimina márgenes que pudieran afectar el tamaño */
+  width: 200%; /* Asegura que el encabezado tome el 100% del ancho del contenedor */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2f73c8;
+  font-size: 18px;
+  font-weight: 700; /* Preguntas en negrita */
+  position: relative; /* Cambiar a posición relativa */
+  left: -5px; /* Ajusta el valor según sea necesario */
+}
+
+.form-group select, .form-group input {
+  width: 105%;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #6a727d;
+  background-color: #ffffff; /* Fondo blanco para los campos */
+  font-family: 'Nunito', sans-serif;
+    font-weight: 300; /* Establece Nunito 300 */
+    margin-left: -7px; /* Alineación a la izquierda */
+}
+
+.form-group select {
+  appearance: none; /* Para quitar el estilo predeterminado del select */
+  background-color: #ffffff; /* Asegúrate de que el fondo sea el que desees */
+  padding-right: 20px; /* Espacio para la flecha */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="black" d="M7 10l5 5 5-5z"/></svg>'); /* Icono de flecha SVG */
+  background-repeat: no-repeat;
+  background-position: right 0px center; /* Ajusta según sea necesario */
+}
+
+.form-group select:focus, .form-group input:focus {
+  outline: none;
+  border-color: #6a727d;
+}
+
+.required {
+  color: #ea0655;
+}
+
+.submit-btn {
+  width: 105%;
+  background-color: #2f73c8;
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative; /* Para el círculo de carga */
+  margin-left: -7px; /* Alineación a la izquierda */
+}
+
+.submit-btn:hover {
+  background-color: #79a3dd;
+}
+
+.loader {
+    width: 23px; /* Tamaño del círculo de carga */
+    height: 23px; /* Tamaño del círculo de carga */
+    border: 3px solid transparent;
+    border-top: 3px solid #2f73c8;
+    border-radius: 50%;
+    animation: spin 0.4s linear infinite;
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Asegura que no afecte el flujo del botón */
+    top: 22.5%; /* Centra verticalmente */
+    left: 45px; /* Ajusta la posición a la derecha */
+    transform: translateY(-50%); /* Centra verticalmente en su contenedor */
+    z-index: 1; /* Asegura que esté por encima del texto del botón */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);}
+}
+
+.recaptcha-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px; /* Ajusta el margen según sea necesario */
+}
+
+.recaptcha-image {
+    width: 315px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    margin-left: -18.8px;
+}
+
+.checkbox {
+    width: 70px; /* Ajusta el tamaño para que sea fácil de clicar */
+    height: 70px;
+    position: absolute;
+    left: -17px; /* Coloca la casilla a la izquierda */
+    top: 45%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    cursor: pointer; /* Cambia el cursor al pasar sobre la casilla */
+}
+
+.loading {
+    width: 42px; /* Ajusta el tamaño del círculo de carga */
+    height: 42px;
+    border: 5px solid transparent;
+    border-top: 5px solid #2f73c8;
+    border-radius: 50%;
+      animation: spin 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite, pulse 1.2s ease-in-out infinite;
+    position: absolute;
+    left: -11px; /* Ajusta la posición dentro de la casilla */
+    top: 20%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    display: none; /* Oculta inicialmente */
+}
+
+.verification-icon {
+    width: 36px; /* Ajusta el tamaño del icono de verificación */
+    height: 36px;
+    background-image: url('bdvi.jpg'); /* Cambia a tu imagen */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -4.4px; /* Ajusta la posición dentro de la casilla */
+    top: 43%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    display: none; /* Oculta inicialmente */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.contact {
+    background-color: #eeeeee; /* Fondo blanco */
+    padding: 0; /* Ajustado para que la imagen se extienda completamente */
+    text-align: center;
+    margin-top: 80px;
+}
+
+.image-contact {
+    margin: 0; /* Eliminar márgenes para que se extienda completamente */
+    width: 100vw; /* Ancho completo de la ventana */
+    position: relative; /* Permitir el uso de posición absoluta en la imagen */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajustar la posición */
+}
+.image-contact img {
+    width: 100vw; /* La imagen ocupará todo el ancho de la ventana */
+    height: auto; /* Mantener la relación de aspecto */
+    margin-bottom: 30px
+}
+
+/* Links menu section */
+.links-menu {
+    background-color: #eeeeee; /* Fondo gris claro */
+    padding: 29px;
+}
+
+.links-menu .menu-column {
+    margin-bottom: 55px;
+    
+}
+
+.menu-column h3 {
+    color: #2f73c8;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: -2px
+}
+
+.menu-column ul {
+    list-style: none;
+}
+
+.menu-column ul li a {
+    text-decoration: none;
+    color: #262d37;
+    display: block;
+    padding: 0px 0;
+    font-size: 18px;
+    font-weight: 500;
+    Margin-bottom: -2px;
+}
+
+.pie {
+    background-color: #aeaeae; /* Fondo blanco */
+    padding: 0; /* Ajustado para que la imagen se extienda completamente */
+    text-align: center;
+}
+
+.image-pie {
+    margin: 0; /* Eliminar márgenes para que se extienda completamente */
+    width: 100vw; /* Ancho completo de la ventana */
+    position: relative; /* Permitir el uso de posición absoluta en la imagen */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajustar la posición */
+}
+.image-pie img {
+    width: 100vw; /* La imagen ocupará todo el ancho de la ventana */
+    height: auto; /* Mantener la relación de aspecto */
+}
+
+
+#success-message {
+    color: #008f39;
+    margin-top: 0px;
+}
+
+#new-confirmation-message {
+    color: #262d37;
+    margin-top: 20px;
+    text-align: justify;
+}

